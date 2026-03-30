@@ -1,0 +1,142 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background: linear-gradient(to left, #000000, #02052b);
+  color: white;
+}
+
+
+.container{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+
+.title{
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+h1 h4{
+  font-size: 32px;
+  margin-bottom: 10px;
+  transition-duration:2s ;
+}
+
+h1:hover{
+  color: #4da3ff;
+  transform: scale(1.5);
+}
+
+h4{
+  color: #aaa;
+}
+h4:hover{
+  color:#4da3ff;
+  transform:scale(1.1);
+}
+
+.square {
+  position: relative;
+  background: #01022d;
+  width: 90%;
+  height: 500px;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 25px #161698;
+  overflow: hidden;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.square * {
+  position: relative;
+  z-index: 2;
+}
+
+.square:hover {
+  box-shadow: 0px 0 100px rgba(0, 119, 255, 0.7);
+}
+
+.square::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, #00aaff, transparent 30%);
+  animation: spin 3s linear infinite;
+  z-index: 0;
+}
+
+.square::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  background: #01022d;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+textarea{
+  width: 100%;
+  height: 200px;
+  resize: none;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  margin: 15px 0;
+  background: #02057b;
+  color: white;
+  outline: none;
+}
+
+input , button{
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #0077ff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 10px 0px;
+  text-decoration: none;
+}
+a{
+   text-decoration: none;
+   color:white;
+}
+
+input:hover{
+  background: #3399ff;
+  transform: scale(1.05);
+  box-shadow: 4px 4px 50px rgba(0,1,255,0.7);
+}
+@media (max-width: 480px){
+  .title h1{
+    font-size: 24px;
+  }
+  textarea{
+    height: 150px;
+  }
+}
+
